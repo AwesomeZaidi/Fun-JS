@@ -70,13 +70,3 @@ String.prototype.camelCase = function () {
     }
     return camelStr
 }
-
-module.exports.test = test
-module.exports.firstCharToUpper = firstCharToUpper
-module.exports.allCaps = allCaps
-module.exports.allfirstCharsToUpper = allfirstCharsToUpper
-module.exports.upperEveryOtherLetter = upperEveryOtherLetter
-module.exports.removeWhiteSpace = removeWhiteSpace
-module.exports.kabobCase = kabobCase
-module.exports.snakeCase = snakeCase
-module.exports.camelCase = camelCases
