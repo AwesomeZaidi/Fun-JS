@@ -1,4 +1,4 @@
-const fb = require('../index.js')
+const _ = require('../index.js')
 
 test('convertStringToList', () => {
     let result;
