@@ -1,7 +1,7 @@
 // Strings-Library/index.js
 
 String.prototype.convertStringToList = function() {
-    return this.split(' ');
+    return this.split('');
 }
 
 String.prototype.isLetter = function() {
@@ -21,7 +21,7 @@ String.prototype.allCaps = function() {
 
 //// CAPITALIZE WORDS ////
 String.prototype.allfirstCharsToUpper = function() {
-    return this.split(' ').map(word => word.firstCharToUpper()).join(' ')
+    return this.split(' ').map(word => word.firstCharUpper()).join(' ')
 }
 
 //// DEPRECATED: CAPITALIZE FIRST CHAR OF EACH WORD ////
@@ -33,15 +33,18 @@ String.prototype.allfirstCharsToUpper = function() {
     //     return lst.join(' ')
     // }
 
-String.prototype.capEvOthLet = function() {
-    return convertStringToList(this).filter((word, idx) => {
-        idx % 2 !== 0 && (lst[idx] = firstCharUp(lst[idx]))
-    }).join(' ')
-}
+// broken
+// String.prototype.capEvOthLet = function() {
+//     return this.split(' ').filter((word, idx) => {
+//         idx % 2 !== 0 && (word = firstCharUp(word))
+//         console.log('word:', word);
+        
+//     }).join(' ')
+// }
 
 //// REMOVE ALL WHITE SPACE ////
-String.prototype.removeWhitespace = function() {
-    return s.replace(/\s/g, "");
+String.prototype.removeWhiteSpace = function() {
+    return this.replace(/\s/g, "");
 }
 
 //// KABOB CASE ////
@@ -58,22 +61,22 @@ String.prototype.snakeCase = function () {
 String.prototype.camelCase = function () {
     let camelStr = ''
     let firstWord = true
-    for (word of this.removeWhiteSpace().split(' ')) {
+    for (word of this.removeWhiteSpace().split('')) {
         if (firstWord) {
             camelStr += word
             firstWord = false
         }
-        else camelStr += word.firstCharToUpper()
+        else camelStr += word.firstCharUpper()
     }
     return camelStr
 }
 
-// module.exports.test = test
-// module.exports.firstCharToUpper = firstCharToUpper
-// module.exports.allCaps = allCaps
-// module.exports.allfirstCharsToUpper = allfirstCharsToUpper
-// module.exports.upperEveryOtherLetter = upperEveryOtherLetter
-// module.exports.removeWhiteSpace = removeWhiteSpace
-// module.exports.kabobCase = kabobCase
-// module.exports.snakeCase = snakeCase
-// module.exports.camelCase = camelCase
+module.exports.test = test
+module.exports.firstCharToUpper = firstCharToUpper
+module.exports.allCaps = allCaps
+module.exports.allfirstCharsToUpper = allfirstCharsToUpper
+module.exports.upperEveryOtherLetter = upperEveryOtherLetter
+module.exports.removeWhiteSpace = removeWhiteSpace
+module.exports.kabobCase = kabobCase
+module.exports.snakeCase = snakeCase
+module.exports.camelCase = camelCases
